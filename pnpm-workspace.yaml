@@ -1,7 +1,10 @@
 packages:
   - "backend"
+  - "frontend"
 overrides:
   babel-plugin-istanbul: 8.0.0
   glob: 13.0.6
 allowBuilds:
   unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@nestjs/testing@11.1.28'
