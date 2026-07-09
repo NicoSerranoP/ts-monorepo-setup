@@ -1,9 +1,10 @@
 import js from "@eslint/js";
+import { defineConfig } from "eslint/config";
+import importPlugin from "eslint-plugin-import-x";
 import prettier from "eslint-plugin-prettier";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 import unusedImports from "eslint-plugin-unused-imports";
 import tseslint from "typescript-eslint";
-import { defineConfig } from "eslint/config";
 
 import { readFileSync } from "fs";
 import { resolve } from "path";
@@ -21,6 +22,7 @@ export const baseConfig = tseslint.config(
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: {
       prettier,
+      "import-x": importPlugin,
       "unused-imports": unusedImports,
     },
     languageOptions: {
@@ -49,7 +51,7 @@ export const baseConfig = tseslint.config(
         },
       ],
       "unused-imports/no-unused-imports": "error",
-      "import/order": [
+      "import-x/order": [
         "error",
         {
           "groups": ["external", "builtin", "internal", "type", "parent", "sibling", "index", "object"],

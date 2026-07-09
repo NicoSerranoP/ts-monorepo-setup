@@ -4,6 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
+    "format": "prettier --write \"**.{ts,tsx}\"",
+    "lint": "eslint .",
     "start:dev": "react-router dev",
     "start:prod": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
@@ -21,6 +23,9 @@
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "@eslint-react/eslint-plugin": "^5.13.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
     "tailwindcss": "^4.2.2",
     "vite": "^8.0.3"
   }
