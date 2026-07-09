@@ -1,6 +1,7 @@
 import { defineConfig } from "eslint/config";
 import globals from "globals";
-import { baseConfig } from "../eslint.config.js";
+
+import { baseConfig } from "../eslint.config.mjs";
 
 export default defineConfig(...baseConfig, {
   files: ["**/*.ts"],
@@ -14,5 +15,8 @@ export default defineConfig(...baseConfig, {
       projectService: true,
       tsconfigRootDir: import.meta.dirname,
     },
+  },
+  rules: {
+    "class-methods-use-this": "off",
   },
 });

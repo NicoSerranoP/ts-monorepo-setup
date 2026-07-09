@@ -1,16 +1,14 @@
 import eslintReactPlugin from "@eslint-react/eslint-plugin";
 import { defineConfig } from "eslint/config";
-import reactHooksPlugin from "eslint-plugin-react-hooks";
 import reactRefreshPlugin from "eslint-plugin-react-refresh";
 import globals from "globals";
 
-import { baseConfig } from "../eslint.config.js";
+import { baseConfig } from "../eslint.config.mjs";
 
 export default defineConfig(...baseConfig, {
   files: ["**/*.{ts,tsx}"],
   plugins: {
     ...eslintReactPlugin.configs["recommended-typescript"].plugins,
-    "react-hooks": reactHooksPlugin,
     "react-refresh": reactRefreshPlugin,
   },
   languageOptions: {
@@ -27,8 +25,13 @@ export default defineConfig(...baseConfig, {
   },
   rules: {
     ...eslintReactPlugin.configs["recommended-typescript"].rules,
-    ...reactHooksPlugin.configs.recommended.rules,
     "no-empty-pattern": "off",
     "react-refresh/only-export-components": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        devDependencies: ["**/*.test.ts", "**/*.spec.ts", "vite.config.ts", "app/routes.ts"],
+      },
+    ],
   },
 });
