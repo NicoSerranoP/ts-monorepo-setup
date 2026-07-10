@@ -48,7 +48,7 @@ export const baseConfig = [
     },
   },
   {
-    ignores: ["**/dist/**", "**/build/**", "**/.react-router/**", "**/eslint.config.mjs"],
+    ignores: ["**/dist/**", "**/build/**", "**/.react-router/**", "**/eslint.config.mjs", "**/commitlint.config.mjs"],
   },
 ];
 
