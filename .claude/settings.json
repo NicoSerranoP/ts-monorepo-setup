@@ -1,0 +1,24 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm run lint --fix && pnpm run format --write"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm run lint --fix && pnpm run format --write"
+          }
+        ]
+      }
+    ]
+  }
+}
